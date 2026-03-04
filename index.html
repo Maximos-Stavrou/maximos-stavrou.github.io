@@ -1438,6 +1438,140 @@
   }
   .ts-toast.show { transform: translateX(-50%) translateY(0); opacity: 1; visibility: visible; pointer-events: auto; }
 
+
+  /* CERTIFICATIONS */
+  #certifications { background: var(--bg2); }
+
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .cert-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .cert-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  }
+
+  .cert-card--earned { border-top: 3px solid var(--accent); }
+  .cert-card--target { border-top: 3px solid var(--border); opacity: 0.75; }
+
+  .cert-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .cert-icons { display: flex; align-items: center; gap: 0.5rem; }
+  .cert-issuer { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+  .cert-issuer-icon { font-size: 1.2rem; }
+
+  .cert-badge-target {
+    margin-left: auto;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 2px 6px;
+    border-radius: 20px;
+  }
+
+  .cert-card-body {
+    padding: 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cert-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  .cert-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .cert-date {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .cert-duration {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  .cert-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .cert-skill-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    background: var(--surface);
+  }
+
+  .cert-id {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    font-family: 'Courier New', monospace;
+    opacity: 0.6;
+    margin-top: auto;
+  }
+
+  .cert-download {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.25rem;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+  }
+
+  .cert-download:hover {
+    background: var(--glow);
+    color: var(--accent);
+  }
+
+  .cert-download span { margin-left: auto; }
+
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
@@ -1502,6 +1636,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certs</a></li>
       <li><a href="#strava">Beyond</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1523,6 +1658,7 @@
   <a href="#skills" onclick="closeMobile()">Skills</a>
   <a href="#experience" onclick="closeMobile()">Experience</a>
   <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#certifications" onclick="closeMobile()">Certs</a>
   <a href="#strava" onclick="closeMobile()">Beyond</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
 </div>
@@ -1670,6 +1806,7 @@
         <div class="skill-cat-title">Certifications</div>
         <div class="skill-tags">
           <span class="skill-tag">Google Data Analytics</span>
+          <span class="skill-tag">Generative AI (Microsoft &amp; LinkedIn)</span>
           <span class="skill-tag">Corporate Storytelling</span>
           <span class="skill-tag">Emerging Leadership Program</span>
           <span class="skill-tag">Process Data Analysis</span>
@@ -1786,6 +1923,122 @@
           <div class="edu-honors">🏅 Dean's Scholarship · Honors Program · Dean's List</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-inner">
+    <div data-reveal>
+      <div class="section-label">Credentials</div>
+      <h2>Certifications &amp;<br>Learning</h2>
+    </div>
+    <div class="certs-grid" data-reveal>
+
+      <div class="cert-card">
+        <div class="cert-card-header">
+          <div class="cert-icons">
+            <svg width="20" height="20" viewBox="0 0 23 23" fill="none"><path d="M0 0h11v11H0z" fill="#f25022"/><path d="M12 0h11v11H12z" fill="#7fba00"/><path d="M0 12h11v11H0z" fill="#00a4ef"/><path d="M12 12h11v11H12z" fill="#ffb900"/></svg>
+            <svg width="52" height="14" viewBox="0 0 652 148" fill="none"><path d="M0 0h652v148H0z" fill="none"/><text x="0" y="112" font-family="Arial" font-weight="700" font-size="100" fill="#0a66c2">in</text><text x="100" y="112" font-family="Arial" font-size="90" fill="#000">LinkedIn</text></svg>
+          </div>
+          <span class="cert-issuer">Microsoft &amp; LinkedIn Learning</span>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-title">Career Essentials in Generative AI</div>
+          <div class="cert-meta">
+            <span class="cert-date">Mar 2026</span>
+            <span class="cert-duration">4 hrs 18 min</span>
+          </div>
+          <div class="cert-skills">
+            <span class="cert-skill-tag">Microsoft Copilot</span>
+            <span class="cert-skill-tag">Generative AI</span>
+            <span class="cert-skill-tag">Responsible AI</span>
+          </div>
+          <div class="cert-id">ID: 803037...0213e54</div>
+        </div></div>
+
+      <div class="cert-card cert-card--earned">
+        <div class="cert-card-header">
+          <span class="cert-issuer-icon" style="font-size:1.1em;">
+            <svg width="18" height="18" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              <path fill="none" d="M0 0h48v48H0z"/>
+            </svg>
+          </span>
+          <span class="cert-issuer">Google / Coursera</span>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-title">Google Data Analytics Specialization</div>
+          <div class="cert-meta">
+            <span class="cert-date">Apr 2023</span>
+          </div>
+          <div class="cert-skills">
+            <span class="cert-skill-tag">Data Analysis</span>
+            <span class="cert-skill-tag">SQL</span>
+            <span class="cert-skill-tag">R</span>
+            <span class="cert-skill-tag">Tableau</span>
+          </div>
+          <div class="cert-id">ID: J68CM9YCDKMY</div>
+        </div>
+      </div>
+
+      <div class="cert-card cert-card--earned">
+        <div class="cert-card-header">
+          <span class="cert-issuer-icon">📑</span>
+          <span class="cert-issuer">Articulus LLC</span>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-title">Corporate Storytelling</div>
+          <div class="cert-meta">
+            <span class="cert-date">2023</span>
+          </div>
+          <div class="cert-skills">
+            <span class="cert-skill-tag">Executive Communication</span>
+            <span class="cert-skill-tag">Narrative Design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card cert-card--earned">
+        <div class="cert-card-header">
+          <span class="cert-issuer-icon">🌱</span>
+          <span class="cert-issuer">RISE / Dassault Systèmes</span>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-title">Emerging Leadership Program</div>
+          <div class="cert-meta">
+            <span class="cert-date">2025</span>
+          </div>
+          <div class="cert-skills">
+            <span class="cert-skill-tag">Leadership</span>
+            <span class="cert-skill-tag">Coaching</span>
+            <span class="cert-skill-tag">Performance Feedback</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card cert-card--earned">
+        <div class="cert-card-header">
+          <span class="cert-issuer-icon"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAArAC0DASIAAhEBAxEB/8QAHAABAAICAwEAAAAAAAAAAAAAAAMHBggBAgUE/8QALBAAAQMDAgUDAwUAAAAAAAAAAQIDBAAFEQYhEjFBUWEHE6EiMnEUFiNSkv/EABoBAAIDAQEAAAAAAAAAAAAAAAMEAAIGBQf/xAAnEQABAwIFBAIDAAAAAAAAAAABAAIRAwQFEiExQTJRYbEGInHB8f/aAAwDAQACEQMRAD8A3LpSlRRKiXIjtvJZW+0l1f2oKwFK/AqrNd6vuV31L+1dOy1RGkO+1JlIylfEMleCNwlISckbnB6HfzLPomx3PQkrUYmvB5KXXGy4sYSEE7ObczjPjI59VjcS4hgmFoaeBBlFtW6qZM0QAJOu06iJgq66VROlNV3PSkqNxPPTbE+yl8MLOVNtqUUkoPQpWCMbBXYZyLzYdbfZQ8y4lxpxIUhaTkKBGQQe1EpVhUHlJYnhVXD3jMZadj7BHBHZd6UpRVy1rPpeTJhvG9sIEh23P+7IZJPE4y4OFZPjkknp7grh+32dx8/otStM211XGW5Dbodb7JUhKSFKHcHB8VkvqFYLro7VC9Q2ZKkwXllaVpSFJbKvubUOXCcnGdsEDmK8lOptLu/zTdCRFyjkqVHmuMtE+GxkAeM1xi3L9Xcd5/S9dp3BuALm3BcHAdJbI8EOgaGYIPO0KC5qZn26ROjtuMWu3RW4ENTg+p5wr4jnG3EcuLIGwwB2zdPpQ6696e2hbxJUG1IGf6pWoJ+AKp2E1e/UC9RrfHjsRIUYYDcdrgYioJ+pWOpOM7nJPxsFbIbFvt0aBGBDMdpLTYJycJGBnztTVo0lxdwsz8orNZbstndc5omYERqe53P8X0UpSn1iF1cQhxtTbiErQoFKkqGQQeYIrH5WhtJSZAfcsMMLHRtJQn/KSB8VkVKq5rXbhGo3FajrSeW/gkelBBhxIMcR4UViKyDkNsthCQfwNqnpSrITnFxk7r//2Q==" width="18" height="18" style="border-radius:3px;vertical-align:middle;" alt="DeepLearning.AI"></span>
+          <span class="cert-issuer">DeepLearning.AI</span>
+        </div>
+        <div class="cert-card-body">
+          <div class="cert-title">ChatGPT Prompt Engineering for Developers</div>
+          <div class="cert-meta">
+            <span class="cert-date">2025</span>
+          </div>
+          <div class="cert-skills">
+            <span class="cert-skill-tag">Prompt Engineering</span>
+            <span class="cert-skill-tag">LLMs</span>
+            <span class="cert-skill-tag">AI Development</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1972,7 +2225,7 @@
             </div>
             <span>→</span>
           </a>
-          <a href="mailto:maximos.stavrou@gmail.com" class="contact-link">
+          <a href="/cdn-cgi/l/email-protection#325f534a5b5f5d411c41465344405d4772555f535b5e1c515d5f" class="contact-link">
             <div class="contact-link-icon">✉</div>
             <div class="contact-link-text">
               <strong>Email</strong>
@@ -2006,7 +2259,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Theme toggle
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
@@ -2144,6 +2397,7 @@
     }
   });
 </script>
+
 
 
 <!-- TOAST ONLY -->
